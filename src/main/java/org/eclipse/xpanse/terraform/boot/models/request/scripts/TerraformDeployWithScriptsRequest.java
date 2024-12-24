@@ -7,7 +7,7 @@ package org.eclipse.xpanse.terraform.boot.models.request.scripts;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
-import java.util.List;
+import java.util.Map;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.eclipse.xpanse.terraform.boot.models.request.directory.TerraformDeployFromDirectoryRequest;
@@ -18,6 +18,6 @@ import org.eclipse.xpanse.terraform.boot.models.request.directory.TerraformDeplo
 public class TerraformDeployWithScriptsRequest extends TerraformDeployFromDirectoryRequest {
 
     @NotNull
-    @Schema(description = "List of Terraform script files to be considered for deploying changes.")
-    private List<String> scripts;
+    @Schema(description = "Map of Terraform script files to be considered for deploying changes.")
+    private Map<String, String> scriptsMap;
 }

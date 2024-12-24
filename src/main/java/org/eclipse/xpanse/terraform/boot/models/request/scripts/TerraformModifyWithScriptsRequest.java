@@ -7,7 +7,7 @@ package org.eclipse.xpanse.terraform.boot.models.request.scripts;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
-import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,8 +22,8 @@ public class TerraformModifyWithScriptsRequest extends TerraformModifyFromDirect
     private UUID taskId;
 
     @NotNull
-    @Schema(description = "List of script files for modify requests deployed via scripts")
-    private List<String> scripts;
+    @Schema(description = "Map of script files for modify requests deployed via scripts")
+    private Map<String, String> scriptsMap;
 
     @NotNull
     @Schema(description = "The .tfState file content after deployment")
